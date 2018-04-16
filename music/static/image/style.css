@@ -1,0 +1,126 @@
+body
+{
+    background-image: url("images/background.png");
+}
+.navbar
+{
+    border-radius: 0;
+}
+.navbar-brand
+{
+    font-family: cursive;
+}
+.album:hover
+{
+	box-shadow: 15px 15px 15px 15px grey;
+}
+.album
+{
+
+	box-shadow: 5px 5px 2px 2px #8a6d3b;
+	background-color: white;
+	height :380px;
+	width :280px;
+	float :left;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+
+}
+.album_logo
+{
+	width: 270px;
+	height:200px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+.album_details
+{
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+
+}
+a{
+	color: white;
+}
+#delete_album
+{
+	background-color: cornflowerblue;
+}
+#view_details
+{
+	background-color: cornflowerblue;
+}
+#fav_album
+{
+	background-color: cornflowerblue;
+}
+.album_deatils
+{
+	box-shadow: 5px 5px 2px 2px #8a6d3b;
+	background-color: white;
+	height :480px;
+	width :300px;
+	float :left;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.album_details_logo
+{
+	width: 290px;
+	height:300px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+.songs
+{
+	box-shadow: 5px 5px 2px 2px #8a6d3b;
+	background-color: white;
+	margin-left: 320px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+.album_video
+{
+    box-shadow: 5px 5px 2px 2px #8a6d3b;
+	background-image: url("images/background.png");
+	height :300px;
+	width :280px;
+	float :left;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.video
+{
+    width: 270px;
+	height:250px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+.img_logo
+{
+    height: 30px;
+    width: 40px;
+    float: left;
+}
+.thumbnail img{
+  height: 250px;
+	width: 290px;
+}
+
+.navbar-brand
+{
+    font-size: x-large;
+    font-family: "AR BERKLEY", cursive;
+}
