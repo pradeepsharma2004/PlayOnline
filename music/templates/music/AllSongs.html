@@ -1,0 +1,66 @@
+{% extends 'music/base.html' %}
+{% block Songs_active %}active{% endblock %}
+{% block title %}All Songs{% endblock %}
+{% block body %}
+    <div class="text-center">
+   <h1>All Music Songs</h1>
+   <p></p>
+        </div>
+   <div class="container-fluid songs-container">
+    <div class="row">
+            <!-- Right Side AlbumBlock-->
+     <div class="col-sm-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Audio File</th>
+                            <th>Play And Download</th>
+                            <th>Album-Title</th>
+                            <th>Favorite</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+        <tbody>
+        {% for song in song_list %}
+            <tr>
+            <td>{{ song.song_title }}</td>
+            <td>{{ song.file_type }}</td>
+            <td>
+                <audio controls>
+                    <source src="{{ song.song.url }}" type="audio/mpeg">
+                </audio>
+                {% comment %}<a href="{{ song.song.url }}">
+                    <button type="button" class="btn btn-success btn-xs">
+                        <span class="glyphicon glyphicon-play"></span>&nbsp; Play
+                    </button>
+                </a>{% endcomment %}
+            </td>
+            <td>{{ song.album.album_title }}</td>
+            <td>
+                <span class="glyphicon glyphicon-star {% if song.is_fav %}active{% endif %}"></span>
+                {% if song.is_fav %}
+                    Yes
+                    {% else %}
+                    No
+                {% endif %}
+            </td>
+            <td><button type="submit" class="btn btn-danger btn-xs">
+                <span class="glyphicon glyphicon-remove"></span>&nbsp; Delete
+            </button>
+            </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+        </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{%  static "MyWebsite/custom.css" %}">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!--Header-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand " href="{% url 'music:index' %}">PlayOnline</a>
+        </div>
+        <!--Items-->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="/video"><span class="glyphicon glyphicon-play-circle"></span>&nbsp;Videos</a>
+                </li>
+                <li class="">
+                    <a href="{{ '/music' }}"><span class="glyphicon glyphicon-music"></span>&nbsp;Music</a>
+                </li>
+                <li class="">
+                    <a href="/image"><span class="glyphicon glyphicon-picture"></span>&nbsp;Images</a>
+                </li>
+                <li class="">
+                    <a href="/admin"><span class="glyphicon glyphicon-user"></span>&nbsp;Admin</a>
+                </li>
+            </ul>
+            <!-- Login Form -->
+
+            <div class="Login_form">
+            <form class="navbar-right form-inline" method="post" action="#">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="email" class="form-control" id="EmailLogin"  placeholder="Email or Phone">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="LoginPassword" placeholder="Password"
+                </div>
+                <button type="submit" class="btn btn-default" id="LoginSignIn">Sign in</button>
+            </form>
+            </div>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
