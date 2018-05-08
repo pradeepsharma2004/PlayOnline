@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Video{% endblock %}</title>
+    {% load static %}
+     <link rel="shortcut icon" type="image/png" href="{%  static 'favicon.ico' %}"/>
+     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{%  static "video/style.css" %}"/>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+
+        <!--Header-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'video:index' %}">Video</a>
+        </div>
+        <!--Items-->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="{% block album_active %}{% endblock %}">
+                    <a href="{% url 'video:index' %}">
+                    <span class="glyphicon glyphicon-cd" ></span>&nbsp;Albums
+                    </a>
+                </li>
+                <li class="{% block Songs_active %}{% endblock %}">
+                    <a href="#{% comment %}{% url 'accounts:songs-all' %}{% endcomment %}">
+                    <span class="glyphicon glyphicon-facetime-video" ></span>&nbsp;Videos
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" action="#" method="get" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="q" value="" placeholder="Search Song/Albums"></input>
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="{% block AddAlbum_active %}{% endblock %}">
+                    <a href="#{% comment %}{% url 'accounts:album-add' %}{% endcomment %}">
+                    <span class="glyphicon glyphicon-plus" ></span>&nbsp;Add Album
+                    </a>
+                </li>
+                <li class="{% block logout_active %}{% endblock %}">
+                    <a href="#">
+                    <span class="glyphicon glyphicon-log-out" ></span>&nbsp;Logout
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+{% block body %}
+{% endblock %}
+</body>
+</html>
