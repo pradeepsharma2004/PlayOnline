@@ -1,0 +1,67 @@
+{% extends 'image/base.html' %}
+{% block title %}Album Details{% endblock %}
+{% block body %}
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+
+            {% for image in album.images_set.all  %}
+
+                <div class="col-lg-3 col-sm-12 col-md-4 panel panel-default">
+                <center><p>{{ image.image_title }}</p></center>
+                <a href="{{ image.image.url }}" class="thumbnail image_amg">
+                    <p>{{ image.image_title }}</p>
+                    <img height="250px" width="350px"  src="{{ image.image.url }}">
+                </a>
+                </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% comment %}form action="{% url 'accounts:favourite' album.id %}" method="post">
+    {% csrf_token %}
+    {% for song in album.songs_set.all  %}
+        //<input type="radio" id="song{{forloop.counter }}" name="song" value="{{ song.id }}">
+        <label for="song{{ forloop.counter }}">
+        {{ song.song_title  }}
+        {% if song.is_fav %}
+            ****
+        {% endif %}
+        </label><br>
+    {% endfor %}
+        <input type="submit" value="Favourite">
+</form>{% endcomment %}
+
