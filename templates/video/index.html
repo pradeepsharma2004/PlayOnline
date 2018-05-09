@@ -1,0 +1,33 @@
+{% extends 'video/Base.Html' %}
+{% block title %}All Video Albums{% endblock %}
+
+{% block body %}
+        <div class="text-center">
+   <h1>Your All Video Albums</h1>
+   <p></p>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <ul>
+        {% for album in video_album_list %}
+
+            <div class="album">
+            <a href="{% url 'video:detail' album.id  %}"><img class="album_logo img-responsive" src="{{ album.album_logo.url }}"></a>
+                <div class="album_details">
+                    <h3>{{ album.album_title }}</h3>
+                    <h5>{{ album.genre }}</h5>
+                    <h5>{{ album.artist }}</h5>
+                <button class="btn btn-default" id="view_details"><a href="{% url 'video:detail' album.id  %}">View Details</a></button>
+                <button class="btn btn-default" id="delete_album"><a href="#"><span class="glyphicon glyphicon-trash" ></span>&nbsp;</a></button>
+                <button class="btn btn-default" id="fav_album"><a href="#"><span class="glyphicon glyphicon-star" ></span>&nbsp;</a></button>
+                </div>
+            </div>
+
+
+
+        {% endfor %}
+    </ul>
+
+            </div>
+            </div>
+    {% endblock %}
