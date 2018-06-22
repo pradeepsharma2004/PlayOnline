@@ -11,7 +11,6 @@ class Album(models.Model):
     def get_absolute_url(self):
         return reverse('music:detail', kwargs={'pk': self.pk},)
 
-
     def __str__(self):
         return self.album_title
 
@@ -23,8 +22,8 @@ class Songs(models.Model):
     is_fav = models.BooleanField(default=False)
     song = models.FileField(upload_to='Music/songs')
 
-    def get_absolute_url(self):
-        return reverse('music:index', kwargs={})
+    #def get_absolute_url(self):
+    #    return reverse('music:index', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.song_title
